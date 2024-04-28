@@ -1,4 +1,4 @@
-import {Model, DataTypes} from 'sequelize'
+import { Model, DataTypes } from 'sequelize'
 import { sequelize } from '../config/db.js'
 
 class Token extends Model {}
@@ -11,6 +11,7 @@ Token.init({
         sequelize,
         modelName: 'token',
         tableName: 'tokens',
-    })
+    }
+)
 
 export { Token }
