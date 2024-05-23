@@ -13,11 +13,8 @@ class FactController {
 
     async getFact(req, res, next) {
         try {
-            // берем id факта из параметров запроса
             const { factId } = req.params
-            // передаем id в сервис для запроса к БД
             const fact = await factService.getFact(factId)
-            // возвращаем найденный факт на клиент
             return res.json(fact)
         } catch (e) {
             next(e)

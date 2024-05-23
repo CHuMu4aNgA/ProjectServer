@@ -7,11 +7,10 @@ import { factValidation } from '../utils/validations.js'
 
 const router = new Router()
 
-// получение всех фактов
 router.get('/', factController.getFacts)
-// получение одного факта по id
+
 router.get('/:factId', factController.getFact)
-// создание факта
+
 router.post(
     '/',
     authMiddleware,
@@ -20,14 +19,14 @@ router.post(
     validationMiddleware,
     factController.createFact
 )
-// удаление факта по id
+
 router.delete(
     '/:factId',
     authMiddleware,
     checkRoleMiddleware('ADMIN'),
     factController.deleteFact
 )
-// изменение факта
+
 router.patch(
     '/:factId',
     authMiddleware,

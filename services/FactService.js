@@ -1,19 +1,17 @@
 import { Fact } from '../models/Fact.js'
 
 class FactService {
-    // запрос к БД на получение всех фактов
+
     async getAllFacts() {
         const facts = await Fact.findAll()
         return facts
     }
     
-    // запрос к БД на получение одного факта
     async getFact(factId) {
         const fact = await Fact.findOne({ where: { id: factId } })
         return fact
     }
 
-    // создание факта в БД
     async createFact(userId, title, text, img) {
         const newFact = await Fact.create({
             userId,
@@ -24,13 +22,11 @@ class FactService {
         return newFact
     }
 
-    // удаление факта из БД
     async deleteFact(factId) {
         const factData = await Fact.destroy({where: {id: factId}})
         return factData
     }
     
-    // изменение факта в БД
     async updateFact(factId, title, text, img) {
         const updatedFact = await Fact.update(
           { title, text, img },

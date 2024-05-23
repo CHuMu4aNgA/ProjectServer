@@ -2,7 +2,7 @@ import { ApiError } from '../exceptions/ApiError.js'
 import { fileService } from '../services/FileService.js'
 
 class FileController {
-    // метод для загрузки одной фотографии
+
     uploadImage(req, res) {
         try {
            const url = fileService.uploadImage(req.file.filename)
@@ -12,7 +12,6 @@ class FileController {
         }
     }
     
-    // метод для загрузки нескольких фотографии
     uploadImages(req, res) {
         try {
             const thumb = req.files.thumbnail[0]

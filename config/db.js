@@ -5,7 +5,7 @@ import{
     DB_PASSWORD,
     DB_PORT,
     DB_USER,
-} from '../utils/secret.js'
+} from '../utils/secrets.js'
 
 const sequelize = new Sequelize(
     DB_NAME, 

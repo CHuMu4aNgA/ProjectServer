@@ -1,3 +1,6 @@
+
+
+
 export class ApiError extends Error {
     // статус-коды ошибок 401, 400 и т.д. 
     status
