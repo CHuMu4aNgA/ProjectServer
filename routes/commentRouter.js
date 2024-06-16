@@ -21,6 +21,10 @@ router.get('/:commentId', commentController.getComment)
 // DELETE-запрос на удаление комментария по id
 router.delete('/:commentId', authMiddleware, commentController.deleteComment)
 // PATCH-запрос на изменение комментария по id
-router.patch('/:commentId', authMiddleware, commentController.updateComment)
+router.patch('/:commentId',
+            authMiddleware, 
+            commentValidation,
+            validationMiddleware,
+            commentController.updateComment)
 
 export { router }

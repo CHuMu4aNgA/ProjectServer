@@ -3,7 +3,9 @@ import { Fact } from '../models/Fact.js'
 class FactService {
 
     async getAllFacts() {
-        const facts = await Fact.findAll()
+        const facts = await Fact.findAll({
+            order: [['id', 'DESC']]
+        })
         return facts
     }
     
