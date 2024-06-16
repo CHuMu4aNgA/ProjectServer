@@ -12,8 +12,6 @@ class UserService {
         if (candidate) {
             throw ApiError.badRequest(`Пользователь с адресом ${email} уже существует`)
         }
-        // если при регистрации указан email администратора, 
-        // то устанавливаем ему роль ADMIN 
         let role
         if (email === ADMIN_EMAIL) {
             role = 'ADMIN'

@@ -2,14 +2,10 @@
 
 
 export class ApiError extends Error {
-    // статус-коды ошибок 401, 400 и т.д. 
     status
-    // непосредственно сами ошибки
     errors
 
     constructor(status, message, errors = []) {
-        // вызываем родительский конструктор при помощи super()
-        // в который передаем сообщение
         super(message)
         this.status = status
         this.errors = errors

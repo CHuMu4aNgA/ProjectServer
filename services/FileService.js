@@ -1,4 +1,12 @@
 class FileService {
+
+    uploadMultiImg(files) {
+        const filesUrl = files 
+            ? files.map((img) => `uploads/${img.filename}`)
+            : []
+            return filesUrl
+    }
+
     uploadImage(filename) {
         return {
             url: `uploads/${filename}`,
@@ -6,9 +14,11 @@ class FileService {
     }
 
     uploadImages(thumb, gallery) {
-        const thumbUrl = `uploads/${thumb.filename}`
-        const galleryUrl = gallery.map((img) => `uploads/${img.filename}`)
-        return {
+        const thumbUrl = thumb ? `uploads/${thumb.filename}` : ''
+        const galleryUrl = gallery ? gallery.map(
+            (img) => `uploads/${img.filename}`
+            ) : []
+        return { 
             thumbUrl,
             galleryUrl
         }

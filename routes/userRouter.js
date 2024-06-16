@@ -10,7 +10,6 @@ router.post('/registration', registerValidation, validationMiddleware, userContr
 router.post('/login', userController.login)
 router.post('/logout', userController.logout)
 router.get('/refresh', userController.refresh)
-// тестовый роутер на получение всех юзеров из базы данных
 router.get('/users', authMiddleware, userController.getUsers)
 
 export { router }
